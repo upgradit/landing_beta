@@ -1108,3 +1108,37 @@ button:hover,
   border-color: #EC6770 !important;
   box-shadow: 0 0 0 2px rgba(236, 103, 112, 0.35) !important;
 }
+
+/* Agrupar email + botón */
+#signup-form .field-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Checkbox debajo */
+#signup-form .gdpr {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Checkbox coral */
+#signup-form input[type="checkbox"]:checked + label:before {
+  background: #EC6770 !important;
+  border-color: #EC6770 !important;
+}
+
+/* Hover */
+#signup-form input[type="checkbox"] + label:hover:before {
+  border-color: #EC6770 !important;
+}
+
+/* Focus accesible */
+#signup-form input[type="checkbox"]:focus + label:before {
+  border-color: #EC6770 !important;
+  box-shadow: 0 0 0 2px rgba(236, 103, 112, 0.35) !important;
+}
