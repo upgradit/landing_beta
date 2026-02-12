@@ -38,14 +38,16 @@
 
 		<!-- Signup Form -->
 			<form id="signup-form" method="POST" action="https://formspree.io/f/xdalenry">
-				<input type="email" name="email" id="email" placeholder="Tu email" autocomplete="email" required />
-				<input type="submit" value="Avísame" />
-				<div class="gdpr">
-					<label>
-						<input type="checkbox" name="privacy" required />
-						Acepto la <a href="/privacidad/">Política de privacidad</a>.
-					</label>
-				</div>
+			  <input type="email" name="email" id="email" placeholder="Tu email" autocomplete="email" required />
+			  <input type="hidden" name="_subject" value="Nueva suscripción - upgradit.ai" />
+			  <input type="hidden" name="_next" value="https://upgradit.ai/gracias.html" />
+			  <input type="submit" value="Avísame" />
+			  <div class="gdpr">
+			    <label>
+			      <input type="checkbox" name="privacy" required />
+			      Acepto la <a href="privacidad.html">Política de privacidad</a>.
+			    </label>
+			  </div>
 			</form>
 
 		<!-- Footer -->
