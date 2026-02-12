@@ -976,3 +976,97 @@ h1.logo img {
 #footer .actions li {
   margin-left: 0;
 }
+
+/* =========================
+   Upgradit brand overrides
+   Primary: #EC6770
+   ========================= */
+
+/* 1) Botones */
+input[type="submit"],
+input[type="button"],
+button,
+.button {
+  background-color: #EC6770 !important;
+  border-color: #EC6770 !important;
+  color: #ffffff !important;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+  background-color: #d45760 !important; /* hover un poco más oscuro */
+  border-color: #d45760 !important;
+}
+
+/* Si usas .button.alt como "secundario", lo dejamos en outline (más elegante) */
+.button.alt {
+  background: transparent !important;
+  border-color: #EC6770 !important;
+  color: #EC6770 !important;
+}
+
+.button.alt:hover {
+  background: #EC6770 !important;
+  color: #ffffff !important;
+}
+
+/* 2) Input email: borde + foco + placeholder */
+#signup-form input[type="email"] {
+  border-color: rgba(236, 103, 112, 0.55) !important;
+}
+
+#signup-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+#signup-form input[type="email"]:focus {
+  border-color: #EC6770 !important;
+  box-shadow: 0 0 0 2px rgba(236, 103, 112, 0.35) !important;
+}
+
+/* 3) Link de Política de privacidad */
+#signup-form .gdpr a,
+#signup-form .gdpr a:visited {
+  color: #EC6770 !important;
+  text-decoration-color: rgba(236, 103, 112, 0.6) !important;
+}
+
+#signup-form .gdpr a:hover {
+  color: #d45760 !important;
+}
+
+/* 4) Checkbox GDPR visible */
+#signup-form .gdpr {
+  margin-top: 1rem;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+#signup-form .gdpr label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+#signup-form .gdpr input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: auto;
+  height: auto;
+  margin: 0;
+  transform: scale(1.1);
+  accent-color: #EC6770; /* soportado en navegadores modernos */
+}
+
+/* 5) Armonizar el gradiente del fondo (tinte suave hacia el rosa)
+   El template usa un overlay; aquí lo "tuneamos" sin cambiar tus imágenes */
+#bg:before {
+  background-image:
+    linear-gradient(45deg,
+      rgba(236, 103, 112, 0.20),
+      rgba(0, 0, 0, 0.55)
+    ) !important;
+}
