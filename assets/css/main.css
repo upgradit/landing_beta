@@ -1212,3 +1212,26 @@ button:hover,
 #signup-form > * {
   margin-left: 0;
 }
+
+/* Página legal (privacidad): evitar centrado vertical del template */
+body.legal {
+  display: block;              /* anula el layout flex del template */
+  height: auto;
+  min-height: 100%;
+  padding: 4em 2em;
+}
+
+@media screen and (min-width: 736px) {
+  body.legal {
+    padding: 4.5em 4em;
+  }
+}
+
+/* Mejor lectura para textos largos */
+body.legal h1, body.legal h2 {
+  margin-top: 1.25em;
+}
+
+body.legal p, body.legal ul {
+  max-width: 900px;
+}
