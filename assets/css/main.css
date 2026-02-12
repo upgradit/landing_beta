@@ -934,3 +934,13 @@ button,
     width: 100%;
   }
 }
+
+h1.logo {
+  margin-bottom: 1rem;
+}
+
+h1.logo img {
+  max-width: 320px;   /* ajustable */
+  width: 100%;
+  height: auto;
+}
