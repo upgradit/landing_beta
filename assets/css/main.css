@@ -1097,3 +1097,14 @@ button:hover,
 #footer .button .icon {
   margin-left: 0.5em;
 }
+
+/* Checkbox (estilo nativo HTML5UP) en color Upgradit */
+#signup-form input[type="checkbox"]:checked + label:before {
+  background: #EC6770 !important;
+  border-color: #EC6770 !important;
+}
+
+#signup-form input[type="checkbox"]:focus + label:before {
+  border-color: #EC6770 !important;
+  box-shadow: 0 0 0 2px rgba(236, 103, 112, 0.35) !important;
+}
