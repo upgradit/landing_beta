@@ -967,3 +967,12 @@ h1.logo img {
   margin: 0;
   transform: scale(1.1);
 }
+
+#footer .actions {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+#footer .actions li {
+  margin-left: 0;
+}
