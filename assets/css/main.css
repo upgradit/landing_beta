@@ -940,7 +940,7 @@ h1.logo {
 }
 
 h1.logo img {
-  max-width: 320px;   /* ajustable */
+  max-width: 500px;   /* ajustable */
   width: 100%;
   height: auto;
 }
