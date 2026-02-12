@@ -1174,3 +1174,41 @@ button:hover,
   flex-basis: 100%;
   margin-top: 1rem;
 }
+
+/* Layout del form: fila 1 = email+botón + mensaje; fila 2 = GDPR */
+#signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0; /* por si algún gap anterior molesta */
+}
+
+/* 1) El grupo (email + botón) primero */
+#signup-form .field-group {
+  order: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 2) El mensaje va justo después del botón */
+#signup-form .message {
+  order: 2;
+  margin-left: 1rem;
+  height: 2.75em;
+  line-height: 2.75em;
+  transform: none;
+  white-space: nowrap;
+}
+
+/* 3) GDPR siempre debajo ocupando toda la línea */
+#signup-form .gdpr {
+  order: 3;
+  flex-basis: 100%;
+  margin-top: 1rem;
+}
+
+/* Por si algún estilo previo estaba “aplastando” márgenes del form */
+#signup-form > * {
+  margin-left: 0;
+}
