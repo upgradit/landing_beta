@@ -1070,3 +1070,31 @@ button:hover,
       rgba(0, 0, 0, 0.55)
     ) !important;
 }
+
+#footer .actions {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#footer .actions li {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* Botón Contactar estilo claro original */
+#footer .button.alt {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  color: #ffffff !important;
+}
+
+#footer .button.alt:hover {
+  background: rgba(255,255,255,0.2) !important;
+  border-color: rgba(255,255,255,0.6) !important;
+  color: #ffffff !important;
+}
+
+#footer .button .icon {
+  margin-left: 0.5em;
+}
