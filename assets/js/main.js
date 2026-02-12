@@ -139,41 +139,47 @@
 			// - Si action="#" (o vacío) mostramos un mensaje local ("fake") y no enviamos nada.
 			// - Si defines un action real (Formspree/Netlify/WP endpoint), dejamos que el navegador envíe el formulario.
 				$form.addEventListener('submit', function(event) {
-
-					var action = ($form.getAttribute('action') || '').trim();
-					var isFake = (!action || action === '#');
-
-					// Envío real: no interceptamos.
-					if (!isFake)
-						return;
-
-					event.stopPropagation();
-					event.preventDefault();
-
-					// Hide message.
-						$message._hide();
-
-					// Disable submit.
-						$submit.disabled = true;
-
-					// Process form.
-					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
-					// but there's enough here to piece together a working AJAX submission call that does.
-						window.setTimeout(function() {
-
-							// Reset form.
-								$form.reset();
-
-							// Enable submit.
-								$submit.disabled = false;
-
-							// Show message.
-								$message._show('success', '¡Gracias! Te avisaremos cuando esté listo.');
-								//$message._show('failure', 'Something went wrong. Please try again.');
-
-						}, 750);
-
+				  event.preventDefault();
+				  event.stopPropagation();
+				
+				  // Hide message.
+				  $message._hide();
+				
+				  // Disable submit.
+				  $submit.disabled = true;
+				
+				  // Enviar por AJAX a Formspree
+				  var action = ($form.getAttribute('action') || '').trim();
+				  var formData = new FormData($form);
+				
+				  fetch(action, {
+				    method: 'POST',
+				    body: formData,
+				    headers: {
+				      'Accept': 'application/json'
+				    }
+				  })
+				  .then(function(response) {
+				    if (response.ok) {
+				      $form.reset();
+				      $message._show('success', '¡Gracias! Te avisaremos cuando esté listo.');
+				    } else {
+				      return response.json().then(function(data) {
+				        var msg = (data && data.errors && data.errors.length)
+				          ? data.errors.map(function(e){ return e.message; }).join(' ')
+				          : 'Ups, algo ha fallado. Prueba de nuevo.';
+				        $message._show('failure', msg);
+				      });
+				    }
+				  })
+				  .catch(function() {
+				    $message._show('failure', 'No se ha podido enviar. Revisa tu conexión e inténtalo de nuevo.');
+				  })
+				  .finally(function() {
+				    $submit.disabled = false;
+				  });
 				});
+
 
 		})();
 
