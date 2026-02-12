@@ -1146,3 +1146,31 @@ button:hover,
 #signup-form .gdpr {
     gap: 0;
 }
+
+/* Mantener layout principal horizontal */
+#signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Email + botón como grupo */
+#signup-form .field-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Colocar mensaje al lado del botón */
+#signup-form .message {
+  margin-left: 1rem;
+  height: 2.75em;
+  line-height: 2.75em;
+  transform: none;
+}
+
+/* Checkbox ocupa toda la línea debajo */
+#signup-form .gdpr {
+  flex-basis: 100%;
+  margin-top: 1rem;
+}
