@@ -1142,3 +1142,15 @@ button:hover,
   border-color: #EC6770 !important;
   box-shadow: 0 0 0 2px rgba(236, 103, 112, 0.35) !important;
 }
+
+#signup-form {
+	flex-direction: column;
+}
+
+#signup-form .gdpr {
+    gap: 0;
+}
+
+#signup-form > * {
+    margin: 0;
+}
